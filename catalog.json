@@ -1,0 +1,148 @@
+{
+  "streams": [
+    {
+      "tap_stream_id": "customDomains",
+      "key_properties": [],
+      "schema": {
+        "properties": {
+          "data": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            },
+            "items": {
+              "type": "object"
+            },
+            "type": [
+              "null",
+              "array"
+            ]
+          }
+        },
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false
+      },
+      "stream": "customDomains",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": "true"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "publications",
+      "key_properties": [],
+      "schema": {
+        "properties": {
+          "data": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            },
+            "items": {
+              "type": "object"
+            },
+            "type": [
+              "null",
+              "array"
+            ]
+          }
+        },
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false
+      },
+      "stream": "publications",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": "true"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "sources",
+      "key_properties": [],
+      "schema": {
+        "properties": {
+          "data": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            },
+            "items": {
+              "type": "object"
+            },
+            "type": [
+              "null",
+              "array"
+            ]
+          }
+        },
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false
+      },
+      "stream": "sources",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": "true"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "trackedLinks",
+      "key_properties": [],
+      "schema": {
+        "properties": {
+          "data": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            },
+            "items": {
+              "type": "object"
+            },
+            "type": [
+              "null",
+              "array"
+            ]
+          }
+        },
+        "type": [
+          "null",
+          "object"
+        ],
+        "additionalProperties": false
+      },
+      "stream": "trackedLinks",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "selected": "true"
+          }
+        }
+      ]
+    }
+  ]
+}
