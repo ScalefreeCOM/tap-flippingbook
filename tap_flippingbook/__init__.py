@@ -141,8 +141,11 @@ def main():
             catalog = args.catalog
         else:
             catalog = discover()
-        sync(args.config, args.state, catalog)
-
+        try:
+            sync(args.config, args.state, catalog)
+            
+        except Exception as e:
+            LOGGER.error("failed to sync the stream. "+ e.message + e.args)
 
 if __name__ == "__main__":
     main()
