@@ -60,10 +60,10 @@ def sync(config, state, catalog):
     offset :   int = 0
     Ids:       list = []
     endpoint: dict = {
-        "publications": "/publication",
-        "sources": "/publication/{id}/source",
-        "trackedLinks": "/tracked_links",
-        "customDomains": "/custom-domains"
+        "publications": r"/publication",
+        "sources": r"/publication/{id}/source",
+        "trackedLinks": r"/tracked_links",
+        "customDomains": r"/custom-domains"
     }
     
     delay : int =  1    
