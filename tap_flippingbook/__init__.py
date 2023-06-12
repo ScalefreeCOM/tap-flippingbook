@@ -60,10 +60,10 @@ def sync(config, state, catalog):
     offset :   int = 0
     Ids:       list = []
     endpoint: dict = {
-        "publications": r"/publication",
-        "sources": r"/publication/{id}/source",
-        "trackedLinks": r"/tracked_links",
-        "customDomains": r"/custom-domains"
+        "publications": "/publication",
+        "sources": "/publication/{id}/source",
+        "trackedLinks": "/tracked_links",
+        "customDomains": "/custom-domains",
     }
     
     delay : int =  1    
@@ -97,7 +97,10 @@ def sync(config, state, catalog):
                     'count': 100,
                     'offset': offset,
                 }
-                response = session.request("GET", endPoint , headers=header, params=params)
+                try:
+                    response = session.request("GET", endPoint , headers=header, params=params)
+                except Exception as e:
+                    LOGGER.error("failed to get data from the end point: "+ endPoint)
                 tap_data = response.json()
 
                 if len(tap_data[stream.stream]) > 0 :
