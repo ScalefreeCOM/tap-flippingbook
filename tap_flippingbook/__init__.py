@@ -141,11 +141,16 @@ def main():
             catalog = args.catalog
         else:
             catalog = discover()
-        try:
+            
+        ## swap the streams so the building stream becomes the primary one
+        for i in range(len(catalog.streams)-1): # -1 skips the last index in case the stream is already at the end 
+            if catalog.streams[i].stream == "sources":
+                catalog.streams[-1],catalog.streams[i] = catalog.streams[i], catalog.streams[-1]
+        try:        
             sync(args.config, args.state, catalog)
             
         except Exception as e:
-            LOGGER.error("failed to sync the stream. "+ e.message + e.args)
+            LOGGER.error("Fieled to sync the stream"+ e.message + e.args)
 
 if __name__ == "__main__":
     main()
