@@ -81,6 +81,7 @@ def sync(config, state, catalog):
         session = requests.Session()
         authorization : str  = 'Bearer ' + config.get('token')
         header        : dict = {'authorization': authorization}
+
         EndPoint = [config.get('baseUrl') + endpoint[stream.stream]]
         if stream.stream == 'sources':
             generatedEndPoints : list = []
