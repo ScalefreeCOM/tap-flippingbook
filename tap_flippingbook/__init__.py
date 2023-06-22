@@ -101,6 +101,7 @@ def sync(config, state, catalog):
                     response = session.request("GET", endPoint , headers=header, params=params)
                 except Exception as e:
                     LOGGER.error("failed to get data from the end point: "+ endPoint)
+                    LOGGER.error(e)
                 tap_data = response.json()
 
                 if len(tap_data[stream.stream]) > 0 :
@@ -153,7 +154,8 @@ def main():
             sync(args.config, args.state, catalog)
             
         except Exception as e:
-            LOGGER.error("Fieled to sync the stream"+ e.message + e.args)
+            LOGGER.error("Fieled to sync the stream")
+            LOGGER.error(e)
 
 if __name__ == "__main__":
     main()
